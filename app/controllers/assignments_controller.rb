@@ -1,4 +1,4 @@
-class AssignmentsController < ProtectedController
+class AssignmentsController < ApplicationController
   before_action :set_assignment, only: [:show, :update, :destroy]
 
   # GET /assignments
