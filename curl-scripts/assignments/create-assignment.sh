@@ -5,7 +5,7 @@ curl "http://localhost:4741/assignments" \
   --request POST \
   --header "Content-Type: application/json" \
   --data '{
-    "assignments": {
+    "assignment": {
       "assignment_name": "'"${NAME}"'",
       "link": "'"${LINK}"'",
       "due_date": "'"${DATE}"'",
