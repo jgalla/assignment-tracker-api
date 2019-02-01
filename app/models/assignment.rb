@@ -1,3 +1,3 @@
 class Assignment < ApplicationRecord
-  has_one :student
+  has_one :user
 end
