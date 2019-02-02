@@ -3,6 +3,7 @@
 curl "http://localhost:4741/assignments" \
   --include \
   --request POST \
+  --header "Authorization: Token token=${TOKEN}" \
   --header "Content-Type: application/json" \
   --data '{
     "assignment": {
