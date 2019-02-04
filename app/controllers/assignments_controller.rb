@@ -3,7 +3,8 @@ class AssignmentsController < ProtectedController
 
   # GET /assignments
   def index
-    @assignments = Assignment.all
+    # @assignments = Assignment.all
+    @assignments = current_user.assignments.all
 
     render json: @assignments
   end
@@ -15,7 +16,8 @@ class AssignmentsController < ProtectedController
 
   # POST /assignments
   def create
-    @assignment = Assignment.new(assignment_params)
+    # @assignment = Assignment.new(assignment_params)
+    @assignment = current_user.assignments.build(assignment_params)
 
     if @assignment.save
       render json: @assignment, status: :created, location: @assignment
@@ -41,7 +43,7 @@ class AssignmentsController < ProtectedController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_assignment
-      @assignment = Assignment.find(params[:id])
+      @assignment = current_user.assignments.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
