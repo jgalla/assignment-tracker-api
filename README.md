@@ -56,3 +56,7 @@ scope.
 * Testing
   - Component testing and end-to-end user testing
 * Styling
+
+### Unsolved Problems and Furure Work
+* Add feature to make API calls for only open or only closed assignments
+* Create joins table to allow user to have multiple assignment groups
