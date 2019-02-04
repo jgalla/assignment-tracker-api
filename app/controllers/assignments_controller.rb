@@ -47,7 +47,8 @@ class AssignmentsController < ProtectedController
     end
 
     # Only allow a trusted parameter "white list" through.
+    # delete_if removes blank parameters to allow partial assignment updates
     def assignment_params
-      params.require(:assignment).permit(:assignment_name, :link, :due_date, :status, :user_id)
+      params.require(:assignment).permit(:assignment_name, :link, :due_date, :status, :user_id).delete_if {|key, value| value.blank? }
     end
 end
